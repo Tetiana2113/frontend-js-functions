@@ -1,23 +1,23 @@
 ﻿'use strict';
 
-           
+
 describe('The function', function () {
 	var array;
 	var originArray;
 	var result;
 
-	beforeEach(function(){
+	beforeEach(function () {
 		array = undefined;
 		result = undefined;
 		originArray = undefined;
 	});
 
 	//Minimal
-	describe('`min`', function () {           
+	describe('`min`', function () {
 		it('is defined', function () {
 			expect(min).toBeDefined();
 		});
-                    
+
 		describe('correctly finds minimal values in arrays of numbers', function () {
 			it('[10, 45, 55, 100, 66, 4, 99]', function () {
 				array = [10, 45, 55, 100, 66, 4, 99];
@@ -87,7 +87,7 @@ describe('The function', function () {
 	describe('`max`', function () {
 		it('is defined', function () {
 			expect(max).toBeDefined();
-		}); 
+		});
 
 		describe('correctly finds maximal values in arrays of numbers', function () {
 			it('[10, 45, 55, 100, 66, 4, 99]', function () {
@@ -159,7 +159,7 @@ describe('The function', function () {
 		it('is defined', function () {
 			expect(sum).toBeDefined();
 		});
-        
+
 		describe('correctly sums numbers', function () {
 			it('10, 45, 55, 100, 66, 4, 99', function () {
 				result = sum(10, 45, 55, 100, 66, 4, 99);
