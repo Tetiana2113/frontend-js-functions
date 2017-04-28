@@ -1,37 +1,38 @@
-﻿function min(arr) {
-	var minNumbers;
+﻿'use strict';
+let array;
 
-	for (var i = 1; i < arr.length; i++) {
-		if (arr[i] === undefined)
-			return;
-		else if (typeof (arr[i]) === 'string' && !isNaN(arr[i])) {
-			if (arr[i] < minNumbers)
-				return minNumbers = arr[i];
+function isUndefined(array) {
+	return array === undefined;
+}
+function isEmpty(array) {
+	return !array.length;
+}
+function min(array) {
+	if (isUndefined(array) || isEmpty(array)) {
+		return;
+	}
+	let filteredArray = array.filter(function (value) {
+		return (typeof value === 'number');
+	})
+	return Math.min.apply(null, filteredArray);
+};
+
+function max(array) {
+	if (isUndefined(array) || isEmpty(array)) {
+		return;
+	}
+	let filteredArray = array.filter(function (value) {
+		return (typeof value === 'number');
+	})
+	return Math.max.apply(null, filteredArray);
+};
+
+function sum() {
+	var sumNum = 0;
+	for (var i = 0; i < arguments.length; i++) {
+		if (typeof arguments[i] === "number" && isNaN(arguments[i]) !== true) {
+			sumNum += arguments[i];
 		}
 	};
-
-	console.log(max(arr));
-
-	
-	function max(arr) {
-		var maxNumbers;
-
-		for (var i = 1; i > arr.length; i++) {
-			if (arr[i] === undefined)
-				return;
-			else if (typeof (arr[i]) === 'string' && !isNaN(arr[i])) {
-				if (arr[i] > maxNumbers)
-					return maxNumbers = arr[i];
-			}
-		};
-
-		console.log(max(arr));
-
-		var arrayNumbers = [10, 30, 25, 32];
-		function sum(sumNumbers) {
-			var sumNumbers = 0;
-			for (var i = 0; i <= arrayNumbers.length - 1; i++) {
-				sumNumbers += arrayNumbers[i];
-			}
-		};
-		console.log(sum(sumNumbers));
+	return sumNum;
+}
